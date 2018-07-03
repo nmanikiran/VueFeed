@@ -35,12 +35,13 @@
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
-.html-value img{
+.html-value img {
   width: 100%;
 }
-.html-value code{
-  width: 100%;
+.html-value code {
+  max-width: 100%;
   word-break: break-word;
+  padding: 0 1em;
 }
 .html-value div {
   width: 100%;

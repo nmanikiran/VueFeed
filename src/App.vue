@@ -1,5 +1,5 @@
 <template>
-  <v-app :dark="isDark">
+  <v-app >
     <v-navigation-drawer
       persistent
       :mini-variant="miniVariant"
@@ -33,17 +33,25 @@
     </v-navigation-drawer>
     <v-toolbar
       app
+      dark
+      color="primary"
+      class="white--text"
       :clipped-left="clipped"
     >
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer class="hidden-xs"></v-spacer>
-      <v-btn icon @click="changeColor" title="Color Change">
-        <v-icon>format_color_fill</v-icon>
-      </v-btn>
+     
      <v-btn icon @click.stop="openAddFeedDialog()" title="Add Feed">
         <v-icon>add</v-icon>
+      </v-btn>
+        <v-btn icon @click="changeColor" title="Color Change">
+        <v-icon>format_color_fill</v-icon>
+      </v-btn>
+       <v-btn icon title="Github Repo">
+      <a href="https://github.com/nmanikiran/VueFeed" target="_blank">
+        <img src="./assets/github-circle-white-transparent.svg" alt="github"></a>
       </v-btn>
     </v-toolbar>
     <v-content>
@@ -51,19 +59,19 @@
       <v-progress-circular
       :size="70"
       :width="7"
-      color="purple"
+      color="primary"
       indeterminate
       class="mt-5"
     ></v-progress-circular>
        </div>
       <div v-for="(item, i) in feedItems" :key="i">
-            <FeedCard :item="item"/>
+          <FeedCard :item="item" />
       </div>
       <AddFeedDialog :dialog="dialog" @addFeed="addFeed"/>
     </v-content>
  
-    <v-footer :fixed="fixed" app class="text-xs-center">
-      <span>&copy; 2018</span>
+    <v-footer app class="justify-center">
+       Made with ❤ by &nbsp; <a href="https://github.com/nmanikiran" target="_blank"> Mani Kiran</a>
     </v-footer>
   </v-app>
 </template>
@@ -71,6 +79,9 @@
 @media screen and (max-width: 768px) {
   body {
     font-size: 16px;
+  }
+  .v-footer {
+    justify-content: center;
   }
 }
 </style>
@@ -90,9 +101,13 @@ export default {
   },
   data() {
     let mobile = isMobile();
-    window.addEventListener('resize', function(){
-      mobile = isMobile();
-    }, false);
+    window.addEventListener(
+      'resize',
+      function() {
+        mobile = isMobile();
+      },
+      false
+    );
 
     return {
       clipped: true,
@@ -102,13 +117,6 @@ export default {
       dialog: false,
       feedData: [],
       isLoading: false,
-      isDark: false,
-      items: [
-        {
-          icon: 'bubble_chart',
-          title: 'Inspire'
-        }
-      ],
       feedItems: [],
       miniVariant: false,
       title: 'VueFeed',
@@ -120,13 +128,12 @@ export default {
       this.dialog = true;
     },
     selectItem(feed) {
+      this.selectedFeed = feed || {};
       if (feed) {
-        this.selectedFeed = feed;
         this.feedItems = feed.items;
       } else {
-        this.selectedFeed = {};
-        this.feedData.forEach(item => {
-          this.feedItems.concat(item.items);
+        this.feedData.forEach(ifeed => {
+          this.feedItems = this.feedItems.concat(ifeed.items);
         });
       }
     },
@@ -139,20 +146,21 @@ export default {
         res.json().then(data => {
           this.isLoading = false;
           const { url } = data.feed;
-          const item = this.feedData.find(i => i.url == url);
+          const item = this.feedData.find(i => i.url === url);
+          const { feed, items } = data;
           if (!item) {
-            this.feedData.push({ feed: data.feed, items: data.items });
+            this.feedData.push({ feed, items });
           }
           if (this.selectedFeed) {
-            this.selectedFeed = { feed: data.feed, items: data.items };
+            this.selectedFeed = { feed, items };
           }
           this.feedItems = data.items.concat(this.feedItems);
         });
       });
     },
     changeColor() {
-      this.isDark = !this.isDark;
-      // this.$vuetify.theme.primary = '#673AB7';
+      const hash = '#' + Math.floor(Math.random() * 16777215).toString(16);
+      this.$vuetify.theme.primary = hash;
     }
   },
   mounted() {
