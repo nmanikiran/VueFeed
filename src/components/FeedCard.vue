@@ -5,11 +5,11 @@
     <v-flex xs12>
       <v-card>
         <v-card-title primary-title>
-          <div>
             <h3 class="headline mb-0">{{item.title}}</h3>
-            <p v-html="item.description"></p>  
-        </div>
-        </v-card-title>
+            </v-card-title>
+            <v-card-text>
+            <p class="html-value" v-html="item.description"></p>  
+        </v-card-text>
           <v-card-actions>
           <a :href="item.link" target="_blank" flat color="orange">Open link</a>
         </v-card-actions>
@@ -19,6 +19,33 @@
     </v-slide-y-transition>
   </v-container>
 </template>
+<style scoped>
+blockquote {
+  background: #f9f9f9;
+  border-left: 4px solid #ccc;
+  margin: 5px 0;
+  padding: 0.5em 10px;
+  quotes: '\201C' '\201D' '\2018' '\2019';
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+.html-value img{
+  width: 100%;
+}
+.html-value code{
+  width: 100%;
+  word-break: break-word;
+}
+.html-value div {
+  width: 100%;
+}
+</style>
 
 <script>
 export default {

@@ -5,8 +5,7 @@
       :mini-variant="miniVariant"
       :clipped="clipped"
       v-model="drawer"
-      enable-resize-watcher
-      fixed
+      :temporary="temporary"
       app
     >
       <v-list>
@@ -30,6 +29,7 @@
           </v-list-tile-action>
         </v-list-tile>
       </v-list>
+      
     </v-navigation-drawer>
     <v-toolbar
       app
@@ -38,7 +38,7 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       
       <v-toolbar-title v-text="title"></v-toolbar-title>
-      <v-spacer></v-spacer>
+      <v-spacer class="hidden-xs"></v-spacer>
       <v-btn icon @click="changeColor" title="Color Change">
         <v-icon>format_color_fill</v-icon>
       </v-btn>
@@ -62,7 +62,7 @@
       <AddFeedDialog :dialog="dialog" @addFeed="addFeed"/>
     </v-content>
  
-    <v-footer :fixed="fixed" app>
+    <v-footer :fixed="fixed" app class="text-xs-center">
       <span>&copy; 2018</span>
     </v-footer>
   </v-app>
@@ -79,6 +79,9 @@
 import FeedCard from './components/FeedCard';
 import AddFeedDialog from './components/AddFeedDialog';
 
+function isMobile() {
+  return window.innerWidth < 993;
+}
 export default {
   name: 'App',
   components: {
@@ -86,9 +89,12 @@ export default {
     AddFeedDialog
   },
   data() {
+    const mobile = isMobile();
+
     return {
       clipped: true,
-      drawer: true,
+      drawer: !mobile,
+      temporary: mobile,
       fixed: false,
       dialog: false,
       feedData: [],
@@ -124,19 +130,18 @@ export default {
     addFeed(e, url) {
       this.dialog = e;
       this.isLoading = true;
-      fetch(
-        'https://api.rss2json.com/v1/api.json?rss_url=' +
-          encodeURIComponent(url)
-      ).then(res => {
+      if (!url) return;
+      const rssUrl = `https://api.rss2json.com/v1/api.json?rss_url=`;
+      fetch(`${rssUrl}` + encodeURIComponent(url)).then(res => {
         res.json().then(data => {
           this.isLoading = false;
-          const { title, url } = data.feed;
+          const { url } = data.feed;
           const item = this.feedData.find(i => i.url == url);
           if (!item) {
             this.feedData.push({ feed: data.feed, items: data.items });
           }
-          if(this.selectedFeed){
-            this.selectedFeed = { feed: data.feed, items: data.items }
+          if (this.selectedFeed) {
+            this.selectedFeed = { feed: data.feed, items: data.items };
           }
           this.feedItems = data.items.concat(this.feedItems);
         });
@@ -144,7 +149,7 @@ export default {
     },
     changeColor() {
       this.isDark = !this.isDark;
-     // this.$vuetify.theme.primary = '#673AB7';
+      // this.$vuetify.theme.primary = '#673AB7';
     }
   },
   mounted() {
