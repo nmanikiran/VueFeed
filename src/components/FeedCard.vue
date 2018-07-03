@@ -19,15 +19,15 @@
     </v-slide-y-transition>
   </v-container>
 </template>
-<style scoped>
-blockquote {
+<style>
+.html-value blockquote {
   background: #f9f9f9;
   border-left: 4px solid #ccc;
   margin: 5px 0;
   padding: 0.5em 10px;
   quotes: '\201C' '\201D' '\2018' '\2019';
 }
-blockquote:before {
+.html-value blockquote:before {
   color: #ccc;
   content: open-quote;
   font-size: 4em;

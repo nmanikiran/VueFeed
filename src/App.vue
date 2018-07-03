@@ -89,7 +89,10 @@ export default {
     AddFeedDialog
   },
   data() {
-    const mobile = isMobile();
+    let mobile = isMobile();
+    window.addEventListener('resize', function(){
+      mobile = isMobile();
+    }, false);
 
     return {
       clipped: true,
