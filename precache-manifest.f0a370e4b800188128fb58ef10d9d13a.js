@@ -1,14 +1,14 @@
 self.__precacheManifest = [
   {
-    "revision": "afb0334a015ca06b3535",
-    "url": "/VueFeed/js/chunk-vendors.afb0334a.js"
+    "revision": "657f74cc30652797248c",
+    "url": "/VueFeed/js/chunk-vendors.657f74cc.js"
   },
   {
     "revision": "aad2f44a4c3f87b7c232",
     "url": "/VueFeed/js/app.aad2f44a.js"
   },
   {
-    "revision": "840636273ac18b922bebbff6de870047",
+    "revision": "a81ca41aa62705164b273083d1bc8384",
     "url": "/VueFeed/index.html"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/VueFeed/img/github-circle-white-transparent.830980e0.svg"
   },
   {
-    "revision": "afb0334a015ca06b3535",
-    "url": "/VueFeed/css/chunk-vendors.30e3f49e.css"
+    "revision": "657f74cc30652797248c",
+    "url": "/VueFeed/css/chunk-vendors.bf6b463a.css"
   },
   {
     "revision": "aad2f44a4c3f87b7c232",
