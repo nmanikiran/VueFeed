@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container fluid class="pb-0">
     <v-slide-y-transition mode="out-in">
       <v-layout column >
     <v-flex xs12>

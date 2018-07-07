@@ -6,7 +6,7 @@
           <span class="headline" primary-title>Add Feed</span>
         </v-card-title>
         <v-card-text>
-          <v-container grid-list-md>
+          <v-container grid-list-md class="pa-0">
               <v-form ref="form" v-model="valid" lazy-validation>
             <v-layout wrap>
               <v-flex xs12>

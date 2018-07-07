@@ -4,7 +4,6 @@ import {
     Vuetify, // required
     VApp, // required
     VNavigationDrawer,
-    VFooter,
     VList,
     VIcon,
     VBtn,
@@ -13,6 +12,8 @@ import {
     VCard,
     VDialog,
     VTextField,
+    VForm,
+    VProgressCircular,
     transitions
 } from 'vuetify';
 import {
@@ -24,7 +25,6 @@ Vue.use(Vuetify, {
     components: {
         VApp,
         VNavigationDrawer,
-        VFooter,
         VList,
         VIcon,
         VBtn,
@@ -33,6 +33,8 @@ Vue.use(Vuetify, {
         VCard,
         VDialog,
         VTextField,
+        VForm,
+        VProgressCircular,
         transitions
     },
     directives: {

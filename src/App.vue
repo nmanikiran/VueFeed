@@ -70,9 +70,9 @@
       <AddFeedDialog :dialog="dialog" @addFeed="addFeed"/>
     </v-content>
  
-    <v-footer app class="justify-center">
+    <div class="text-lg-center pa-4">
        Made with ❤ by &nbsp; <a href="https://github.com/nmanikiran" target="_blank"> Mani Kiran</a>
-    </v-footer>
+    </div>
   </v-app>
 </template>
 <style>
