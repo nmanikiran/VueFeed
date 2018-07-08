@@ -43,15 +43,15 @@
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer class="hidden-xs"></v-spacer>
      
-     <v-btn icon @click.stop="openAddFeedDialog()" title="Add Feed">
+     <v-btn icon @click.stop="openAddFeedDialog()" role="button" title="Add Feed">
         <v-icon>add</v-icon>
       </v-btn>
-        <v-btn icon @click="changeColor" title="Color Change">
+        <v-btn icon @click="changeColor" role="button" title="Color Change">
         <v-icon>format_color_fill</v-icon>
       </v-btn>
-       <v-btn icon title="Github Repo">
+       <v-btn icon role="button" title="Github Repo">
       <a href="https://github.com/nmanikiran/VueFeed" target="_blank">
-        <img src="./assets/github-circle-white-transparent.svg" alt="github"></a>
+        <img src="/img/github-circle-white-transparent.svg" alt="github"></a>
       </v-btn>
     </v-toolbar>
     <v-content>
@@ -87,14 +87,14 @@
 </style>
 
 <script>
-import FeedCard from './components/FeedCard';
-import AddFeedDialog from './components/AddFeedDialog';
+import FeedCard from "./components/FeedCard";
+import AddFeedDialog from "./components/AddFeedDialog";
 
 function isMobile() {
   return window.innerWidth < 993;
 }
 export default {
-  name: 'App',
+  name: "App",
   components: {
     FeedCard,
     AddFeedDialog
@@ -102,7 +102,7 @@ export default {
   data() {
     let mobile = isMobile();
     window.addEventListener(
-      'resize',
+      "resize",
       function() {
         mobile = isMobile();
       },
@@ -119,7 +119,7 @@ export default {
       isLoading: false,
       feedItems: [],
       miniVariant: false,
-      title: 'VueFeed',
+      title: "VueFeed",
       selectedFeed: {}
     };
   },
@@ -159,15 +159,15 @@ export default {
       });
     },
     changeColor() {
-      const hash = '#' + Math.floor(Math.random() * 16777215).toString(16);
+      const hash = "#" + Math.floor(Math.random() * 16777215).toString(16);
       this.$vuetify.theme.primary = hash;
     }
   },
   mounted() {
     if (this.feedData.length == 0) {
       let feed = {
-        title: 'Vue.js Developers',
-        url: 'https://vuejsdevelopers.com/feed.xml'
+        title: "Vue.js Developers",
+        url: "https://vuejsdevelopers.com/feed.xml"
       };
       this.addFeed(false, feed.url);
     }

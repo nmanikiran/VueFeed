@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.82467642080a4df446386bb75da115a1.js"
+  "/precache-manifest.a633c3a11d355fb8e45519aa307b51e8.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "vueFeed"});
