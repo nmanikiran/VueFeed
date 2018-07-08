@@ -1,5 +1,8 @@
+var path = process.env.NODE_ENV === "production" ? "/VueFeed/" : "/";
+
 module.exports = {
   pwa: {
-    name: 'VueFeed'
-  }
-}
+    name: "VueFeed"
+  },
+  baseUrl: path
+};
