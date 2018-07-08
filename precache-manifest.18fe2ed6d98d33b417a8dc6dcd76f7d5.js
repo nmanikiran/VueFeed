@@ -8,7 +8,7 @@ self.__precacheManifest = [
     "url": "/VueFeed/js/app.7fa212b8.js"
   },
   {
-    "revision": "502639028b1642cf7dd4395336423287",
+    "revision": "c801d6b447ef60c485928f6688fd2083",
     "url": "/VueFeed/index.html"
   },
   {
