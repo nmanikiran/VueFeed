@@ -6,7 +6,8 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/VueFeed",
-  "icons": [{
+  "icons": [
+    {
       "src": "/img/icons/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"

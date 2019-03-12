@@ -87,14 +87,14 @@
 </style>
 
 <script>
-import FeedCard from './components/FeedCard';
-import AddFeedDialog from './components/AddFeedDialog';
+import FeedCard from "./components/FeedCard";
+import AddFeedDialog from "./components/AddFeedDialog";
 
 function isMobile() {
   return window.innerWidth < 993;
 }
 export default {
-  name: 'App',
+  name: "App",
   components: {
     FeedCard,
     AddFeedDialog
@@ -102,7 +102,7 @@ export default {
   data() {
     let mobile = isMobile();
     window.addEventListener(
-      'resize',
+      "resize",
       function() {
         mobile = isMobile();
       },
@@ -119,7 +119,7 @@ export default {
       isLoading: false,
       feedItems: [],
       miniVariant: false,
-      title: 'VueFeed',
+      title: "VueFeed",
       selectedFeed: {}
     };
   },
@@ -159,15 +159,15 @@ export default {
       });
     },
     changeColor() {
-      const hash = '#' + Math.floor(Math.random() * 16777215).toString(16);
+      const hash = "#" + Math.floor(Math.random() * 16777215).toString(16);
       this.$vuetify.theme.primary = hash;
     }
   },
   mounted() {
     if (this.feedData.length == 0) {
       let feed = {
-        title: 'Vue.js Developers',
-        url: 'https://vuejsdevelopers.com/feed.xml'
+        title: "Vue.js Developers",
+        url: "https://vuejsdevelopers.com/feed.xml"
       };
       this.addFeed(false, feed.url);
     }
