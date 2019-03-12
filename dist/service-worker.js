@@ -11,10 +11,10 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.3.1/workbox-sw.js");
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.d73aa3f0c6ccaab6b93585848959c2b3.js"
+  "/VueFeed/precache-manifest.58aaf3b28b5e9262c8eb340ff7143e63.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "vueFeed"});

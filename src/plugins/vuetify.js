@@ -1,43 +1,62 @@
 // main.js
 import Vue from 'vue';
-import {
-    Vuetify, // required
-    VApp, // required
-    VNavigationDrawer,
-    VList,
-    VIcon,
-    VBtn,
-    VToolbar,
-    VGrid,
-    VCard,
-    VDialog,
-    VTextField,
-    VForm,
-    VProgressCircular,
-    transitions
-} from 'vuetify';
-import {
-    Ripple
-} from 'vuetify/es5/directives';
+import Vuetify, {
+  VApp, // required
+  VNavigationDrawer,
+  VFlex,
+  VLayout,
+  VContainer,
+  VSpacer,
+  VContent,
+  VList,
+  VListTile,
+  VListTileTitle,
+  VListTileAction,
+  VCard,
+  VCardTitle,
+  VCardText,
+  VCardActions,
+  VIcon,
+  VBtn,
+  VToolbar,
+  VToolbarTitle,
+  VToolbarSideIcon,
+  VTextField,
+  VForm,
+  VProgressCircular,
+  VSlideYTransition,
+} from 'vuetify/lib';
+import { Ripple } from 'vuetify/lib/directives';
 import 'vuetify/src/stylus/app.styl';
 
 Vue.use(Vuetify, {
-    components: {
-        VApp,
-        VNavigationDrawer,
-        VList,
-        VIcon,
-        VBtn,
-        VToolbar,
-        VGrid,
-        VCard,
-        VDialog,
-        VTextField,
-        VForm,
-        VProgressCircular,
-        transitions
-    },
-    directives: {
-        Ripple
-    }
+  components: {
+    VApp,
+    VNavigationDrawer,
+    VFlex,
+    VLayout,
+    VContainer,
+    VSpacer,
+    VContent,
+    VList,
+    VListTile,
+    VListTileTitle,
+    VListTileAction,
+    VIcon,
+    VBtn,
+    VToolbar,
+    VToolbarTitle,
+    VToolbarSideIcon,
+    VCard,
+    VCardTitle,
+    VCardText,
+    VCardActions,
+    VTextField,
+    VForm,
+    VProgressCircular,
+    VSlideYTransition,
+  },
+  directives: {
+    Ripple,
+  },
 });

@@ -7,13 +7,23 @@
         </v-card-title>
         <v-card-text>
           <v-container grid-list-md class="pa-0">
-              <v-form ref="form" v-model="valid" lazy-validation>
-            <v-layout wrap>
-              <v-flex xs12>
-                <v-text-field label="Feed Url" :rules="feedRules" required v-model="feed" @keyup.enter="add" type="url" hint="Enter feed url" autocomplete="off" autofocus></v-text-field>
-              </v-flex>
-            </v-layout>
-              </v-form>
+            <v-form ref="form" v-model="valid" lazy-validation>
+              <v-layout wrap>
+                <v-flex xs12>
+                  <v-text-field
+                    label="Feed Url"
+                    :rules="feedRules"
+                    required
+                    v-model="feed"
+                    @keyup.enter="add"
+                    type="url"
+                    hint="Enter feed url"
+                    autocomplete="off"
+                    autofocus
+                  ></v-text-field>
+                </v-flex>
+              </v-layout>
+            </v-form>
           </v-container>
           <small>*indicates required field</small>
         </v-card-text>
@@ -28,18 +38,19 @@
 </template>
 
 <script>
+import { VDialog } from "vuetify/lib";
 export default {
-  props: ['dialog'],
+  props: ["dialog"],
   data() {
     return {
       valid: true,
-      feed: '',
+      feed: "",
       feedRules: [
-        v => !!v || 'Name is required',
+        v => !!v || "Name is required",
         v =>
           /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g.test(
             v
-          ) || 'Url must be valid'
+          ) || "Url must be valid"
       ],
       isOpendialog: false
     };
@@ -53,17 +64,20 @@ export default {
     cancel() {
       this.$refs.form.reset();
       this.isOpendialog = !this.isOpendialog;
-      this.$emit('addFeed', this.isOpendialog);
+      this.$emit("addFeed", this.isOpendialog);
     },
     add() {
       if (this.$refs.form.validate()) {
         this.isOpendialog = !this.isOpendialog;
-        this.$emit('addFeed', this.isOpendialog, this.feed);
+        this.$emit("addFeed", this.isOpendialog, this.feed);
         this.$refs.form.reset();
       } else {
-        console.error('err');
+        console.error("err");
       }
     }
+  },
+  components: {
+    VDialog
   }
 };
 </script>
