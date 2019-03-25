@@ -4,11 +4,11 @@ self.__precacheManifest = [
     "url": "/VueFeed/js/chunk-vendors.e3110fc9.js"
   },
   {
-    "revision": "5d6d2b72d0675f9b841b",
-    "url": "/VueFeed/js/app.916c9f01.js"
+    "revision": "90a1ba60d8e8b11f3621",
+    "url": "/VueFeed/js/app.ec6acab0.js"
   },
   {
-    "revision": "edecc8e1c52d3e361e8bbae67a35790e",
+    "revision": "accbf312f34eaee8262d4ac108afa565",
     "url": "/VueFeed/index.html"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/VueFeed/css/chunk-vendors.5308c14b.css"
   },
   {
-    "revision": "5d6d2b72d0675f9b841b",
-    "url": "/VueFeed/css/app.7a4fc38d.css"
+    "revision": "90a1ba60d8e8b11f3621",
+    "url": "/VueFeed/css/app.7929423c.css"
   }
 ];
