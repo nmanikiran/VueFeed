@@ -1,5 +1,6 @@
 <template>
-  <v-container fluid class="pb-0">
+  <v-container fluid
+               class="pb-0">
     <v-slide-y-transition mode="out-in">
       <v-layout column>
         <v-flex xs12>
@@ -8,10 +9,14 @@
               <h3 class="headline mb-0">{{item.title}}</h3>
             </v-card-title>
             <v-card-text>
-              <p class="html-value" v-html="item.description"></p>
+              <p class="html-value"
+                 v-html="item.description"></p>
             </v-card-text>
             <v-card-actions>
-              <a :href="item.link" target="_blank" flat color="orange">Open link</a>
+              <a :href="item.link"
+                 target="_blank"
+                 flat
+                 color="orange">Open link</a>
             </v-card-actions>
           </v-card>
         </v-flex>

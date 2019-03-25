@@ -2,38 +2,32 @@
   "name": "vueFeed",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/nmanikiran/VueFeed#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nmanikiran/VueFeed.git"
-  },
-  "bugs": {
-    "url": "https://github.com/nmanikiran/VueFeed/issues"
-  },
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "gh-pages": "^2.0.1",
     "register-service-worker": "^1.6.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue": "^2.6.8",
-    "vuetify": "^1.5.4"
+    "vuetify": "^1.5.4",
+    "vuex": "^3.0.1",
+    "yarn": "^1.13.0"
   },
   "devDependencies": {
-    "@babel/polyfill": "^7.2.5",
-    "@vue/cli-plugin-babel": "^3.4.1",
-    "@vue/cli-plugin-eslint": "^3.4.1",
-    "@vue/cli-plugin-pwa": "^3.4.1",
-    "@vue/cli-service": "^3.4.1",
+    "@babel/polyfill": "^7.4.0",
+    "@vue/cli-plugin-babel": "^3.5.1",
+    "@vue/cli-plugin-eslint": "^3.5.1",
+    "@vue/cli-plugin-pwa": "^3.5.1",
+    "@vue/cli-service": "^3.5.1",
     "babel-plugin-transform-imports": "^1.5.1",
     "eslint-config-prettier": "^2.10.0",
+    "gh-pages": "^2.0.1",
     "vue-cli-plugin-vuetify": "^0.1.6",
-    "vue-template-compiler": "^2.6.8"
+    "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
     "root": true,
@@ -68,5 +62,13 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/nmanikiran/VueFeed/issues"
+  },
+  "homepage": "https://github.com/nmanikiran/VueFeed#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nmanikiran/VueFeed.git"
+  }
 }
