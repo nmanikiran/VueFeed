@@ -2,7 +2,6 @@
 import Vue from 'vue';
 import Vuetify, {
   VApp, // required
-  VNavigationDrawer,
   VFlex,
   VLayout,
   VContainer,
@@ -18,9 +17,6 @@ import Vuetify, {
   VCardActions,
   VIcon,
   VBtn,
-  VToolbar,
-  VToolbarTitle,
-  VToolbarSideIcon,
   VTextField,
   VForm,
   VProgressCircular,
@@ -32,7 +28,6 @@ import 'vuetify/src/stylus/app.styl';
 Vue.use(Vuetify, {
   components: {
     VApp,
-    VNavigationDrawer,
     VFlex,
     VLayout,
     VContainer,
@@ -44,9 +39,6 @@ Vue.use(Vuetify, {
     VListTileAction,
     VIcon,
     VBtn,
-    VToolbar,
-    VToolbarTitle,
-    VToolbarSideIcon,
     VCard,
     VCardTitle,
     VCardText,

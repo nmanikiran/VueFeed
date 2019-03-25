@@ -4,9 +4,12 @@
              color="primary"
              class="white--text"
              :clipped-left="clipped">
-    <v-toolbar-side-icon @click.stop="openDrawer"></v-toolbar-side-icon>
+    <v-toolbar-side-icon @click.stop="openDrawer"
+                         title="menu"></v-toolbar-side-icon>
 
-    <v-toolbar-title v-text="title"></v-toolbar-title>
+    <v-toolbar-title>
+      <v-btn href="/">{{title}}</v-btn>
+    </v-toolbar-title>
     <v-spacer class="hidden-xs"></v-spacer>
 
     <v-btn icon
@@ -34,6 +37,7 @@
 </template>
 
 <script>
+import { VToolbar, VToolbarTitle, VToolbarSideIcon, } from 'vuetify/lib';
 export default {
   data() {
     return {
@@ -52,9 +56,14 @@ export default {
       const hash = "#" + Math.floor(Math.random() * 16777215).toString(16);
       this.$vuetify.theme.primary = hash;
     }
-  }
+  },
+  components: {
+    VToolbar,
+    VToolbarTitle,
+    VToolbarSideIcon,
+  },
 };
 </script>
 
-<style scoped>
+<style lang="stylus" scoped>
 </style>

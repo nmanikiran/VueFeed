@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import { VNavigationDrawer, } from 'vuetify/lib';
+
 export default {
   data() {
     return {
@@ -64,7 +66,10 @@ export default {
       };
       this.$store.dispatch("fetchFeed", feed.url);
     }
-  }
+  },
+  components: {
+    VNavigationDrawer,
+  },
 };
 </script>
 

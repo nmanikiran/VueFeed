@@ -5,18 +5,23 @@
       <v-layout column>
         <v-flex xs12>
           <v-card>
-            <v-card-title primary-title>
+            <v-card-title primary-title
+                          class="feed-title">
               <h3 class="headline mb-0">{{item.title}}</h3>
+              <v-btn :href="item.link"
+                     target="_blank"
+                     flat
+                     icon
+                     color="primary">
+                <v-icon>share</v-icon>
+              </v-btn>
             </v-card-title>
             <v-card-text>
               <p class="html-value"
                  v-html="item.description"></p>
             </v-card-text>
             <v-card-actions>
-              <a :href="item.link"
-                 target="_blank"
-                 flat
-                 color="orange">Open link</a>
+
             </v-card-actions>
           </v-card>
         </v-flex>
@@ -59,5 +64,9 @@ export default {
 }
 .html-value div {
   width: 100%;
+}
+.feed-title {
+  display: flex;
+  justify-content: space-between;
 }
 </style>
