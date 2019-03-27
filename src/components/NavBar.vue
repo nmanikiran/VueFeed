@@ -7,8 +7,13 @@
     <v-toolbar-side-icon @click.stop="openDrawer"
                          title="menu"></v-toolbar-side-icon>
 
-    <v-toolbar-title>
-      <v-btn href="/">{{title}}</v-btn>
+    <v-toolbar-title class="ma-0">
+      <v-btn flat
+             ripple="false"
+             depressed
+             dark
+             class="ma-0 headline"
+             href="/">{{title}}</v-btn>
     </v-toolbar-title>
     <v-spacer class="hidden-xs"></v-spacer>
 
@@ -66,4 +71,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.headline {
+  text-transform: none;
+}
 </style>

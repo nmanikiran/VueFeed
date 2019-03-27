@@ -13,16 +13,13 @@
                      flat
                      icon
                      color="primary">
-                <v-icon>share</v-icon>
+                <v-icon>open_in_new</v-icon>
               </v-btn>
             </v-card-title>
             <v-card-text>
               <p class="html-value"
                  v-html="item.description"></p>
             </v-card-text>
-            <v-card-actions>
-
-            </v-card-actions>
           </v-card>
         </v-flex>
       </v-layout>
